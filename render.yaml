@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: tradementor-backend
+    runtime: docker
+    rootDir: backend
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - { key: APP_ENV, value: production }
+      - { key: TELEGRAM_BOT_TOKEN, sync: false }
+      - { key: TELEGRAM_WEBHOOK_SECRET, sync: false }
+      - { key: ADMIN_TELEGRAM_IDS, sync: false }
+      - { key: DATABASE_URL, sync: false }
+      - { key: REDIS_URL, sync: false }
+      - { key: ANTHROPIC_API_KEY, sync: false }
+      - { key: VOYAGE_API_KEY, sync: false }
+      - { key: JWT_SECRET, sync: false }
+      - { key: PUBLIC_BASE_URL, sync: false }
+      - { key: DASHBOARD_ORIGIN, sync: false }
